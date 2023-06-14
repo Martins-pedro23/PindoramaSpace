@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+:root {
+  font-family: "Audiowide", cursive;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: rgb(0, 0, 0);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.scream {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.hologram {
+  height: fit-content;
+  width: fit-content;
+  border: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 156, 117, 0.25);
+  box-shadow: 0 0 10px 10px rgba(0, 156, 117, 0.25);
+  border-radius: 16px;
+  backdrop-filter: blur(2.2px);
+  -webkit-backdrop-filter: blur(2.2px);
+  user-select: none;
+
+  animation: pulse 3s ease-in-out infinite alternate, turningOnHolgram 2.80s linear 1;
+}
+
+.hologramText.firstTime{
+  animation: turningOnText 3s linear 1;
+}
+
+.hologramText {
+  font-size: 5em;
+  text-align: center;
+
+  animation: glow 3.5s ease-in-out infinite alternate;
+}
+
+.hologramTextNew{
+  font-size: 3em;
+  text-align: center;
+
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+.buttonHologram {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: "Audiowide", cursive;
+  font-size: 2em;
+  margin-top: 3em;
+  padding: 10px;
+  transition: 0.5s;
+  border-radius: 5px;
+  user-select: none;
+  animation: surgin 4s linear 1;
+}
+
+.buttonHologram:hover {
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 0 0 6px 6px rgba(255, 255, 255, 0.25);
+  transform: scale(1.1, 1.1);
+}
+
+.deactivate{
+  display: none;
+  visibility: hidden;
+}
+
+@keyframes pulse {
+  0% {
+    background: rgba(0, 156, 117, 0.25);
+    box-shadow: 0 0 10px 10px rgba(0, 156, 117, 0.25);
+  }
+  50% {
+    background: rgba(0, 219, 164, 0.25);
+    box-shadow: 0 0 10px 14px rgba(0, 219, 164, 0.25);
+  }
+  100% {
+    background: rgba(0, 156, 117, 0.25);
+    box-shadow: 0 0 10px 10px rgba(0, 156, 117, 0.25);
+  }
+}
+
+@keyframes glow{
+  0% {
+    text-shadow: 0 0 1px #ffffffa9;
+  }
+  50% {
+    text-shadow: 0 0 7px #ffffffa9;
+  }
+  100% {
+    text-shadow: 0 0 1px #ffffffa9;
+  }
+}
+
+@keyframes surgin {
+  0% {
+    transform: scale(1, 1) translate(0px, 500px);
+
+  }
+  70% {
+    transform: scale(1, 1) translate(0px,500px);
+
+  }
+  100% {
+    transform: scale(1, 1) translate(0);
+  }
+}
+
+@keyframes turningOnHolgram {
+  0% {
+    height: 0em;
+    width: 0em;
+  }
+  60% {
+    width: 70em;
+  }
+  70% {
+    height: 1px;
+    background-color: #fff;
+  }
+  100% {
+    height: 20em;
+  }
+}
+@keyframes turningOnText {
+  0% {
+    font-size: 0em;
+  }
+  30% {
+    font-size: 0em;
+  }
+  70% {
+    font-size: 0em;
+  }
+  100% {
+    font-size: 5em;
+  }
+}

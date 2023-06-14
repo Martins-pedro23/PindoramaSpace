@@ -1,0 +1,49 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+
+
+body{
+    background-color: rgb(43, 43, 43);
+    font-family: 'Kalam', cursive;
+    color: rgb(61, 61, 61);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+.alltext{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    background-color: rgb(253, 246, 235);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.411);
+}
+.alltext p{
+    font-size: 1.4em;
+    margin:  7px;
+}
+.heartText{
+    position: relative;
+}
+
+.heart{
+    position: absolute;
+    right: -200px;
+    animation: HeartPulse 1s infinite;
+}
+
+@keyframes HeartPulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
